@@ -21,6 +21,9 @@ public class City {
     @Column(name = "nombre")
     private String name;
 
+    @Column(name = "id_departamento")
+    private Integer idDepartment;
+
     @ManyToOne
     @JoinColumn(name = "id_departamento", insertable = false, updatable = false)
     private Department department;

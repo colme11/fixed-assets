@@ -41,6 +41,15 @@ public class Asset {
     @Column(name = "fecha_compra")
     private LocalDateTime dateOfPurchase;
 
+    @Column(name = "id_tipo_activo")
+    private Integer idAssetType;
+
+    @Column(name = "id_area")
+    private Integer idArea;
+
+    @Column(name = "id_empleado")
+    private Integer idEmployee;
+
     @ManyToOne
     @JoinColumn(name = "id_tipo_activo", insertable = false, updatable = false)
     private AssetType assetType;

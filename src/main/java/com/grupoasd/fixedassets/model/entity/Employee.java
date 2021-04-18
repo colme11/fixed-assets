@@ -37,5 +37,5 @@ public class Employee {
     private String email;
 
     @OneToMany(mappedBy = "employee")
-    private List<Asset> actives;
+    private List<Asset> assets;
 }

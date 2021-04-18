@@ -18,6 +18,9 @@ public class Area {
     @Column(name = "nombre")
     private String name;
 
+    @Column(name = "id_ciudad")
+    private Integer idCity;
+
     @ManyToOne
     @JoinColumn(name = "id_ciudad", insertable = false, updatable = false)
     private City city;
