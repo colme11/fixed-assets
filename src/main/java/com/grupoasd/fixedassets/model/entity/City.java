@@ -1,12 +1,9 @@
 package com.grupoasd.fixedassets.model.entity;
 
-import lombok.Data;
-
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Data
 @Table(name = "ciudades")
 public class City {
 
@@ -30,4 +27,52 @@ public class City {
 
     @OneToMany(mappedBy = "city")
     private List<Area> areas;
+
+    public Integer getIdCity() {
+        return idCity;
+    }
+
+    public void setIdCity(Integer idCity) {
+        this.idCity = idCity;
+    }
+
+    public String getCodeDane() {
+        return codeDane;
+    }
+
+    public void setCodeDane(String codeDane) {
+        this.codeDane = codeDane;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getIdDepartment() {
+        return idDepartment;
+    }
+
+    public void setIdDepartment(Integer idDepartment) {
+        this.idDepartment = idDepartment;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public List<Area> getAreas() {
+        return areas;
+    }
+
+    public void setAreas(List<Area> areas) {
+        this.areas = areas;
+    }
 }

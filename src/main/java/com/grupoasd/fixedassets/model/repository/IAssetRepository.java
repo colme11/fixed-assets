@@ -15,5 +15,5 @@ public interface IAssetRepository {
 
     Asset save(Asset asset);
 
-    List<Asset> assetsByQueryFilter(AssetType activeType, int serial, LocalDateTime fecha);
+    List<Asset> assetsByQueryFilter(AssetType activeType, int serial, LocalDateTime date);
 }

@@ -8,5 +8,5 @@ import java.time.LocalDateTime;
 
 public interface AssetCrudRepository extends CrudRepository<Asset, Integer> {
 
-    List<Asset> findByAssetTypeOrSerialOrDateOfPurchaseOrderBySerial(AssetType assetType, int serial, LocalDateTime fecha);
+    List<Asset> findByAssetTypeOrSerialOrDateOfPurchaseOrderBySerial(AssetType assetType, int serial, LocalDateTime date);
 }

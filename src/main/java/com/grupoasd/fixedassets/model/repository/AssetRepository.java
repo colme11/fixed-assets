@@ -35,7 +35,7 @@ public class AssetRepository implements IAssetRepository{
     }
 
     @Override
-    public List<Asset> assetsByQueryFilter(AssetType activeType, int serial, LocalDateTime fecha) {
-        return assetCrudRepository.findByAssetTypeOrSerialOrDateOfPurchaseOrderBySerial(activeType,serial, fecha);
+    public List<Asset> assetsByQueryFilter(AssetType activeType, int serial, LocalDateTime date) {
+        return assetCrudRepository.findByAssetTypeOrSerialOrDateOfPurchaseOrderBySerial(activeType,serial, date);
     }
 }
