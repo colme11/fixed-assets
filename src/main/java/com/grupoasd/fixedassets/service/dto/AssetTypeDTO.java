@@ -1,11 +1,17 @@
 package com.grupoasd.fixedassets.service.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class AssetTypeDTO {
 
+    @JsonIgnore
     private Integer id;
 
+    @JsonProperty("nombre")
     private String nameAssetType;
 
+    @JsonProperty("descripción")
     private String descriptionAssetType;
 
     public Integer getId() {

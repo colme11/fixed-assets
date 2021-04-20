@@ -1,21 +1,35 @@
 package com.grupoasd.fixedassets.service.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class EmployeeDTO {
 
+    @JsonProperty("id_empleado")
     private Integer id;
 
+    @JsonIgnore
     private String firstNameEmployee;
 
+    @JsonIgnore
     private String secondNameEmployee;
 
+    @JsonIgnore
     private String firstLastnameEmployee;
 
+    @JsonIgnore
     private String secondLastnameEmployee;
 
+    @JsonProperty("nombre")
+    private String nameEmployee;
+
+    @JsonProperty("numero_telefonico")
     private String phoneNumberEmployee;
 
+    @JsonProperty("numero_celular")
     private String cellNumberEmployee;
 
+    @JsonProperty("correo_electronico")
     private String emailEmployee;
 
     public Integer getId() {
@@ -56,6 +70,14 @@ public class EmployeeDTO {
 
     public void setSecondLastnameEmployee(String secondLastnameEmployee) {
         this.secondLastnameEmployee = secondLastnameEmployee;
+    }
+
+    public String getNameEmployee() {
+        return firstNameEmployee+" "+secondNameEmployee+" "+firstLastnameEmployee+" "+secondLastnameEmployee;
+    }
+
+    public void setNameEmployee(String nameEmployee) {
+        this.nameEmployee = nameEmployee;
     }
 
     public String getPhoneNumberEmployee() {

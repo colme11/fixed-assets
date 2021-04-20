@@ -6,7 +6,7 @@ import com.grupoasd.fixedassets.model.entity.AssetType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,7 +35,7 @@ public class AssetRepository implements IAssetRepository{
     }
 
     @Override
-    public List<Asset> assetsByQueryFilter(AssetType activeType, int serial, LocalDateTime date) {
-        return assetCrudRepository.findByAssetTypeOrSerialOrDateOfPurchaseOrderBySerial(activeType,serial, date);
+    public List<Asset> assetsByQueryFilter(AssetType activeType, String serial, LocalDate date) {
+        return assetCrudRepository.findByAssetTypeAndSerialAndDateOfPurchaseOrderBySerial(activeType,serial, date);
     }
 }

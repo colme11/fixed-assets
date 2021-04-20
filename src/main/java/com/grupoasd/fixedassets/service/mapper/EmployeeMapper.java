@@ -19,6 +19,7 @@ public interface EmployeeMapper {
             @Mapping(source = "phoneNumber", target = "phoneNumberEmployee"),
             @Mapping(source = "cellNumber", target = "cellNumberEmployee"),
             @Mapping(source = "email", target = "emailEmployee"),
+            @Mapping(target = "nameEmployee", ignore = true)
     })
     EmployeeDTO toEmployeeDto(Employee employee);
 

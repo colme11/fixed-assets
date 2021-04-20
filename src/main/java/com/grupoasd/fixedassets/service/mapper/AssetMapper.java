@@ -16,7 +16,7 @@ public interface AssetMapper {
             @Mapping(source = "idAsset", target = "id"),
             @Mapping(source = "name", target = "assetName"),
             @Mapping(source = "descripcion", target = "descriptionAsset"),
-            @Mapping(source = "serial", target = "assetSeries"),
+            @Mapping(source = "serial", target = "assetSerial"),
             @Mapping(source = "weight", target = "assetWeight"),
             @Mapping(source = "high", target = "assetHeight"),
             @Mapping(source = "width", target = "assetWidth"),

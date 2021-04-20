@@ -1,44 +1,59 @@
 package com.grupoasd.fixedassets.service.dto;
 
-import com.grupoasd.fixedassets.model.entity.Area;
-import com.grupoasd.fixedassets.model.entity.AssetType;
-import com.grupoasd.fixedassets.model.entity.Employee;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class AssetDTO {
 
+    @JsonProperty("numero_interno_de_inventario")
     private Integer id;
 
+    @JsonProperty("nombre")
     private String assetName;
 
+    @JsonProperty("descripción")
     private String descriptionAsset;
 
-    private int assetSeries;
+    @JsonProperty("serial")
+    private String assetSerial;
 
-    private int assetWeight;
+    @JsonProperty("peso")
+    private Integer assetWeight;
 
-    private int assetHeight;
+    @JsonProperty("alto")
+    private Integer assetHeight;
 
-    private int assetWidth;
+    @JsonProperty("ancho")
+    private Integer assetWidth;
 
-    private int assetLength;
+    @JsonProperty("largo")
+    private Integer assetLength;
 
-    private double assetPurchaseValue;
+    @JsonProperty("valor_compra")
+    private Double assetPurchaseValue;
 
-    private LocalDateTime assetPurchaseDate;
+    @JsonProperty("fecha_de_compra")
+    private LocalDate assetPurchaseDate;
 
+    @JsonProperty("id_tipo")
     private Integer assetTypeId;
 
+    @JsonProperty("tipo")
+    private AssetTypeDTO assetTypeOfAssert;
+
+    @JsonIgnore
     private Integer areaId;
 
+    @JsonIgnore
     private Integer employeeId;
 
-    private AssetType assetTypeOfAssert;
+    @JsonProperty("area")
+    private AreaDTO assetArea;
 
-    private Area assetArea;
-
-    private Employee employeeAsset;
+    @JsonProperty("empleado")
+    private EmployeeDTO employeeAsset;
 
     public Integer getId() {
         return id;
@@ -64,59 +79,59 @@ public class AssetDTO {
         this.descriptionAsset = descriptionAsset;
     }
 
-    public int getAssetSeries() {
-        return assetSeries;
+    public String getAssetSerial() {
+        return assetSerial;
     }
 
-    public void setAssetSeries(int assetSeries) {
-        this.assetSeries = assetSeries;
+    public void setAssetSerial(String assetSerial) {
+        this.assetSerial = assetSerial;
     }
 
-    public int getAssetWeight() {
+    public Integer getAssetWeight() {
         return assetWeight;
     }
 
-    public void setAssetWeight(int assetWeight) {
+    public void setAssetWeight(Integer assetWeight) {
         this.assetWeight = assetWeight;
     }
 
-    public int getAssetHeight() {
+    public Integer getAssetHeight() {
         return assetHeight;
     }
 
-    public void setAssetHeight(int assetHeight) {
+    public void setAssetHeight(Integer assetHeight) {
         this.assetHeight = assetHeight;
     }
 
-    public int getAssetWidth() {
+    public Integer getAssetWidth() {
         return assetWidth;
     }
 
-    public void setAssetWidth(int assetWidth) {
+    public void setAssetWidth(Integer assetWidth) {
         this.assetWidth = assetWidth;
     }
 
-    public int getAssetLength() {
+    public Integer getAssetLength() {
         return assetLength;
     }
 
-    public void setAssetLength(int assetLength) {
+    public void setAssetLength(Integer assetLength) {
         this.assetLength = assetLength;
     }
 
-    public double getAssetPurchaseValue() {
+    public Double getAssetPurchaseValue() {
         return assetPurchaseValue;
     }
 
-    public void setAssetPurchaseValue(double assetPurchaseValue) {
+    public void setAssetPurchaseValue(Double assetPurchaseValue) {
         this.assetPurchaseValue = assetPurchaseValue;
     }
 
-    public LocalDateTime getAssetPurchaseDate() {
+    public LocalDate getAssetPurchaseDate() {
         return assetPurchaseDate;
     }
 
-    public void setAssetPurchaseDate(LocalDateTime assetPurchaseDate) {
+    public void setAssetPurchaseDate(LocalDate assetPurchaseDate) {
         this.assetPurchaseDate = assetPurchaseDate;
     }
 
@@ -126,6 +141,14 @@ public class AssetDTO {
 
     public void setAssetTypeId(Integer assetTypeId) {
         this.assetTypeId = assetTypeId;
+    }
+
+    public AssetTypeDTO getAssetTypeOfAssert() {
+        return assetTypeOfAssert;
+    }
+
+    public void setAssetTypeOfAssert(AssetTypeDTO assetTypeOfAssert) {
+        this.assetTypeOfAssert = assetTypeOfAssert;
     }
 
     public Integer getAreaId() {
@@ -144,27 +167,19 @@ public class AssetDTO {
         this.employeeId = employeeId;
     }
 
-    public AssetType getAssetTypeOfAssert() {
-        return assetTypeOfAssert;
-    }
-
-    public void setAssetTypeOfAssert(AssetType assetTypeOfAssert) {
-        this.assetTypeOfAssert = assetTypeOfAssert;
-    }
-
-    public Area getAssetArea() {
+    public AreaDTO getAssetArea() {
         return assetArea;
     }
 
-    public void setAssetArea(Area assetArea) {
+    public void setAssetArea(AreaDTO assetArea) {
         this.assetArea = assetArea;
     }
 
-    public Employee getEmployeeAsset() {
+    public EmployeeDTO getEmployeeAsset() {
         return employeeAsset;
     }
 
-    public void setEmployeeAsset(Employee employeeAsset) {
+    public void setEmployeeAsset(EmployeeDTO employeeAsset) {
         this.employeeAsset = employeeAsset;
     }
 }

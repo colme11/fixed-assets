@@ -3,7 +3,7 @@ package com.grupoasd.fixedassets.model.repository;
 import com.grupoasd.fixedassets.model.entity.Asset;
 import com.grupoasd.fixedassets.model.entity.AssetType;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,5 +15,5 @@ public interface IAssetRepository {
 
     Asset save(Asset asset);
 
-    List<Asset> assetsByQueryFilter(AssetType activeType, int serial, LocalDateTime date);
+    List<Asset> assetsByQueryFilter(AssetType activeType, String serial, LocalDate date);
 }

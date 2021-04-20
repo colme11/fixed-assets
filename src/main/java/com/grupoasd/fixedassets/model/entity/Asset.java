@@ -1,7 +1,7 @@
 package com.grupoasd.fixedassets.model.entity;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "activos")
@@ -18,25 +18,25 @@ public class Asset {
     @Column(name = "descripcion")
     private String descripcion;
 
-    private int serial;
+    private String serial;
 
     @Column(name = "peso")
-    private int weight;
+    private Integer weight;
 
     @Column(name = "alto")
-    private int high;
+    private Integer high;
 
     @Column(name = "ancho")
-    private int width;
+    private Integer width;
 
     @Column(name = "largo")
-    private int longAsset;
+    private Integer longAsset;
 
     @Column(name = "valor_compra")
-    private double valueOfPurchase;
+    private Double valueOfPurchase;
 
     @Column(name = "fecha_compra")
-    private LocalDateTime dateOfPurchase;
+    private LocalDate dateOfPurchase;
 
     @Column(name = "id_tipo_activo")
     private Integer idAssetType;
@@ -83,59 +83,59 @@ public class Asset {
         this.descripcion = descripcion;
     }
 
-    public int getSerial() {
+    public String getSerial() {
         return serial;
     }
 
-    public void setSerial(int serial) {
+    public void setSerial(String serial) {
         this.serial = serial;
     }
 
-    public int getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(Integer weight) {
         this.weight = weight;
     }
 
-    public int getHigh() {
+    public Integer getHigh() {
         return high;
     }
 
-    public void setHigh(int high) {
+    public void setHigh(Integer high) {
         this.high = high;
     }
 
-    public int getWidth() {
+    public Integer getWidth() {
         return width;
     }
 
-    public void setWidth(int width) {
+    public void setWidth(Integer width) {
         this.width = width;
     }
 
-    public int getLongAsset() {
+    public Integer getLongAsset() {
         return longAsset;
     }
 
-    public void setLongAsset(int longAsset) {
+    public void setLongAsset(Integer longAsset) {
         this.longAsset = longAsset;
     }
 
-    public double getValueOfPurchase() {
+    public Double getValueOfPurchase() {
         return valueOfPurchase;
     }
 
-    public void setValueOfPurchase(double valueOfPurchase) {
+    public void setValueOfPurchase(Double valueOfPurchase) {
         this.valueOfPurchase = valueOfPurchase;
     }
 
-    public LocalDateTime getDateOfPurchase() {
+    public LocalDate getDateOfPurchase() {
         return dateOfPurchase;
     }
 
-    public void setDateOfPurchase(LocalDateTime dateOfPurchase) {
+    public void setDateOfPurchase(LocalDate dateOfPurchase) {
         this.dateOfPurchase = dateOfPurchase;
     }
 
