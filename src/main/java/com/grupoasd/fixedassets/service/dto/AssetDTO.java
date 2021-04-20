@@ -43,10 +43,10 @@ public class AssetDTO {
     @JsonProperty("tipo")
     private AssetTypeDTO assetTypeOfAssert;
 
-    @JsonIgnore
+    @JsonProperty("id_area")
     private Integer areaId;
 
-    @JsonIgnore
+    @JsonProperty("id_empleado")
     private Integer employeeId;
 
     @JsonProperty("area")

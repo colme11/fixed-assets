@@ -17,6 +17,12 @@ public class AssetTypeService {
     @Autowired
     private AssetTypeMapper mapper;
 
+    /**
+     * Query an asset type for id
+     *
+     * @param idAssetType
+     * @return
+     */
     public Optional<AssetTypeDTO> findByAssetType(int idAssetType){
         return assetTypeRepository.findByAssetType(idAssetType).map(assetType -> mapper.toAssetTypeDto(assetType));
     }

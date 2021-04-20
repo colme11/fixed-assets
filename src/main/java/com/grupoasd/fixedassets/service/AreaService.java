@@ -17,6 +17,12 @@ public class AreaService {
     @Autowired
     private AreaMapper mapper;
 
+    /**
+     * Query an area for id
+     *
+     * @param idArea
+     * @return
+     */
     public Optional<AreaDTO> findByArea(int idArea){
        return areaRepository.findByArea(idArea).map(area -> mapper.toAreaDto(area));
     }

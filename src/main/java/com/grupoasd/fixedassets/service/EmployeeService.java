@@ -17,6 +17,12 @@ public class EmployeeService {
     @Autowired
     EmployeeMapper mapper;
 
+    /**
+     * Query an employee for id
+     *
+     * @param idEmployee
+     * @return
+     */
     public Optional<EmployeeDTO> findByEmployee(int idEmployee){
         return employeeRepository.findByEmployee(idEmployee).map(employee -> mapper.toEmployeeDto(employee));
     }
