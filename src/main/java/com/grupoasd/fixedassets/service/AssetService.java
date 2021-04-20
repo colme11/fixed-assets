@@ -6,6 +6,8 @@ import com.grupoasd.fixedassets.service.dto.AssetDTO;
 import com.grupoasd.fixedassets.service.dto.AssetTypeDTO;
 import com.grupoasd.fixedassets.service.mapper.AssetMapper;
 import com.grupoasd.fixedassets.service.mapper.AssetTypeMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,8 @@ import java.util.Optional;
 
 @Service
 public class AssetService {
+
+    private static final Logger logger = LoggerFactory.getLogger(AssetService.class);
 
     @Autowired
     private IAssetRepository assetRepository;
@@ -35,6 +39,7 @@ public class AssetService {
      * @return
      */
     public List<AssetDTO> getAll(){
+        logger.info("AssetService.getAll() - Query all asset");
         return mapper.toAssetDtoList(assetRepository.getAll());
     }
 
@@ -45,6 +50,7 @@ public class AssetService {
      * @return
      */
     public Optional<AssetDTO> findByAsset(int idAsset){
+        logger.info("AssetService.findByAsset() - Query asset by its id");
         return assetRepository.findByAsset(idAsset).map(asset -> mapper.toAssertDto(asset));
     }
 
@@ -55,6 +61,7 @@ public class AssetService {
      * @return
      */
     public AssetDTO save(AssetDTO assetDto){
+        logger.info("AssetService.save() - create new asset");
         return mapper.toAssertDto(assetRepository.save(mapper.toAsset(assetDto)));
     }
 
@@ -65,6 +72,7 @@ public class AssetService {
      * @return
      */
     public AssetDTO update(AssetDTO assetDto){
+        logger.info("AssetService.update() - update asset");
         return mapper.toAssertDto(assetRepository.save(mapper.toAsset(assetDto)));
     }
 
@@ -80,6 +88,7 @@ public class AssetService {
         Optional<AssetTypeDTO> assetType = assetTypeService.findByAssetType(tipo);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate localDate = LocalDate.parse(date, formatter);
+        logger.info("AssetService.assetsByQueryFilter() - active query by parameters");
         List<Asset> assets = assetRepository.assetsByQueryFilter(assetTypeMapper.toAssetType(assetType.get()),serial, localDate);
         return mapper.toAssetDtoList(assets);
     }
