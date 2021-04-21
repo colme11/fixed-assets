@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "970b0e20-84cd-411e-860a-5639eb586824",
+		"name": "grupoasd",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "consulta_filtro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-18-216-119-178.us-east-2.compute.amazonaws.com/grupoasd-activos-fijos/api/asset?tipo=3&serial=2&fecha_compra=03/05/2021",
+					"protocol": "http",
+					"host": [
+						"ec2-18-216-119-178",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"grupoasd-activos-fijos",
+						"api",
+						"asset"
+					],
+					"query": [
+						{
+							"key": "tipo",
+							"value": "3"
+						},
+						{
+							"key": "serial",
+							"value": "2"
+						},
+						{
+							"key": "fecha_compra",
+							"value": "03/05/2021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consulta_todos_activos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-18-216-119-178.us-east-2.compute.amazonaws.com/grupoasd-activos-fijos/api/assets",
+					"protocol": "http",
+					"host": [
+						"ec2-18-216-119-178",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"grupoasd-activos-fijos",
+						"api",
+						"assets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registro_nuevo_activo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"nombre\": \"Portatil\",\n        \"descripción\": \"ACER\",\n        \"serial\": \"0007\",\n        \"peso\": 30,\n        \"alto\": 40,\n        \"ancho\": 60,\n        \"largo\": 45,\n        \"valor_compra\": 2500000.0,\n        \"fecha_de_compra\": \"2021-04-21\",\n        \"id_tipo\": 1,\n        \"id_area\": null,\n        \"id_empleado\": 80119876\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-18-216-119-178.us-east-2.compute.amazonaws.com/grupoasd-activos-fijos/api/asset",
+					"protocol": "http",
+					"host": [
+						"ec2-18-216-119-178",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"grupoasd-activos-fijos",
+						"api",
+						"asset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizacion_registro_activo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"numero_interno_de_inventario\": 2,\n        \"nombre\": \"Portatil\",\n        \"descripción\": \"HP\",\n        \"serial\": \"005\",\n        \"peso\": 10,\n        \"alto\": 20,\n        \"ancho\": 20,\n        \"largo\": 45,\n        \"valor_compra\": 2000000.0,\n        \"fecha_de_compra\": \"2021-04-20\",\n        \"id_tipo\": 1,\n        \"id_area\": null,\n        \"id_empleado\": 80119876\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-18-216-119-178.us-east-2.compute.amazonaws.com/grupoasd-activos-fijos/api/asset",
+					"protocol": "http",
+					"host": [
+						"ec2-18-216-119-178",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"grupoasd-activos-fijos",
+						"api",
+						"asset"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
