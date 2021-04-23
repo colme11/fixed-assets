@@ -7,15 +7,15 @@ import com.grupoasd.fixedassets.model.repository.IAreaRepository;
 import com.grupoasd.fixedassets.model.repository.IAssetTypeRepository;
 import com.grupoasd.fixedassets.model.repository.IEmployeeRepository;
 import com.grupoasd.fixedassets.service.dto.AssetDTO;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -30,17 +30,17 @@ class FieldValidatorTest {
     @Autowired
     private FieldValidator fieldValidator;
 
-    @Mock
+    @MockBean
     private IEmployeeRepository employeeRepository;
 
-    @Mock
+    @MockBean
     private IAreaRepository areaRepository;
 
-    @Mock
+    @MockBean
     private IAssetTypeRepository assetTypeRepository;
 
-    @Before
-    public void init() {
+    @BeforeEach
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
     }
 
